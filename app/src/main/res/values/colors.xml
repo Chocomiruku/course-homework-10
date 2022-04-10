@@ -5,9 +5,11 @@
     <color name="violet_300">#b18fcf</color>
     <color name="violet_500">#9c27b0</color>
     <color name="green_200">#82C039</color>
+    <color name="pink_300">#F06292</color>
     <color name="gray_800">#263238</color>
     <color name="gray_400">#a9a9aC</color>
     <color name="gray_100">#cfd8dc</color>
     <color name="gray_50">#E2E6EA</color>
+    <color name="gray_20">#EEEFF1</color>
     <color name="white">#fafafa</color>
 </resources>

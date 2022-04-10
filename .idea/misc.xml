@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/drawable/ic_baseline_favorite_border.xml" value="0.1765" />
+        <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1765" />
+        <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/drawable/ic_baseline_favorite_filled.xml" value="0.1765" />
         <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/drawable/ic_connection_error.xml" value="0.185" />
         <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/drawable/ic_fish.xml" value="0.185" />
         <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/drawable/ic_food.xml" value="0.185" />
@@ -16,7 +19,7 @@
         <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/layout/fragment_fish_overview.xml" value="0.259375" />
         <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/layout/fragment_main.xml" value="0.259375" />
         <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/layout/list_item_fact.xml" value="0.264" />
-        <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/layout/list_item_fish.xml" value="0.264" />
+        <entry key="..\:/Users/Chocomilk/AndroidStudioProjects/course-homework-10/app/src/main/res/layout/list_item_fish.xml" value="0.4" />
       </map>
     </option>
   </component>

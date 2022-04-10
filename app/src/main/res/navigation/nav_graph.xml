@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fishOverviewFragment"
-        android:name="com.chocomiruku.homework10.overview.FishOverviewFragment"
+        android:name="com.chocomiruku.homework10.presentation.FishOverviewFragment"
         android:label="fragment_fish_overview"
         tools:layout="@layout/fragment_fish_overview" />
 </navigation>

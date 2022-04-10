@@ -1,4 +1,4 @@
-package com.chocomiruku.homework10.network
+package com.chocomiruku.homework10.model.network
 
 import com.chocomiruku.homework10.domain.Fish
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

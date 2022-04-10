@@ -1,21 +1,27 @@
-package com.chocomiruku.homework10.overview
+package com.chocomiruku.homework10.presentation
 
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.chocomiruku.homework10.R
 import com.chocomiruku.homework10.databinding.ListItemFishBinding
 import com.chocomiruku.homework10.domain.Fish
 
-class FishAdapter() :
+class FishAdapter(
+    private val onClickListener: OnClickListener,
+    private val viewModel: FishOverviewViewModel
+) :
     ListAdapter<Fish, FishAdapter.ViewHolder>(FactDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val fish = getItem(position)
-        holder.bind(fish)
+        holder.bind(fish, viewModel, onClickListener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,11 +31,42 @@ class FishAdapter() :
     class ViewHolder private constructor(private val binding: ListItemFishBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(fish: Fish) {
+        fun bind(fish: Fish, viewModel: FishOverviewViewModel, onClickListener: OnClickListener) {
             binding.fish = fish
+            updateFavouritesButton(binding.updateFavouritesBtn, fish, viewModel)
+
             binding.biologyText.text =
                 HtmlCompat.fromHtml(fish.biology, HtmlCompat.FROM_HTML_MODE_LEGACY)
             binding.biologyText.movementMethod = LinkMovementMethod.getInstance()
+
+            binding.updateFavouritesBtn.setOnClickListener {
+                onClickListener.onClick(fish)
+                updateFavouritesButton(it as Button, fish, viewModel)
+            }
+        }
+
+        private fun updateFavouritesButton(
+            it: Button,
+            fish: Fish,
+            viewModel: FishOverviewViewModel
+        ) {
+            val isAdded = viewModel.checkIsAddedToFavourites(fish)
+
+            if (!isAdded) {
+                it.setCompoundDrawablesWithIntrinsicBounds(
+                    AppCompatResources.getDrawable(
+                        it.context,
+                        R.drawable.ic_baseline_favorite_border
+                    ), null, null, null
+                )
+            } else {
+                it.setCompoundDrawablesWithIntrinsicBounds(
+                    AppCompatResources.getDrawable(
+                        it.context,
+                        R.drawable.ic_baseline_favorite_filled
+                    ), null, null, null
+                )
+            }
         }
 
         companion object {
@@ -43,6 +80,9 @@ class FishAdapter() :
         }
     }
 
+    class OnClickListener(val clickListener: (fish: Fish) -> Unit) {
+        fun onClick(fish: Fish) = clickListener(fish)
+    }
 
     class FactDiffCallback :
         DiffUtil.ItemCallback<Fish>() {

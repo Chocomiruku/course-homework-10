@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.chocomiruku.homework10.domain.Fish
-import com.chocomiruku.homework10.overview.ApiStatus
-import com.chocomiruku.homework10.overview.FishAdapter
+import com.chocomiruku.homework10.presentation.ApiStatus
+import com.chocomiruku.homework10.presentation.FishAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 @BindingAdapter("listData")

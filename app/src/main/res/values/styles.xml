@@ -28,4 +28,26 @@
     <style name="rounded_corners_img_view" parent="">
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="Widget.App.Button.IconOnly" parent="Widget.MaterialComponents.Button">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:minWidth">52dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.IconOnly</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent.IconOnly</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.IconOnly" parent="">
+        <item name="colorPrimary">@color/gray_20</item>
+        <item name="colorOnPrimary">@color/pink_300</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent.IconOnly" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
