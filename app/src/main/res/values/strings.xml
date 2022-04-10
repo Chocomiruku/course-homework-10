@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Homework10</string>
+    <string name="app_name">Homework 10: Retrofit, Moshi, Glide</string>
+    <string name="network_status_content_description">Network status</string>
+    <string name="no_internet_connection">No Internet connection</string>
+    <string name="species_name">Species name</string>
+    <string name="scientific_name">Scientific name</string>
+    <string name="location_icon_content_description">Location icon</string>
+    <string name="location">Location</string>
+    <string name="availability">Availability</string>
+    <string name="availability_icon_content_description">Availability time icon</string>
+    <string name="biology_icon_content_description">Fish biology icon</string>
+    <string name="biology">Biology</string>
+    <string name="health_benefits_icon_content_description" />
+    <string name="health_benefits">Health benefits</string>
+    <string name="fish_image_content_description">Fish species illustration</string>
 </resources>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fish"
+            type="com.chocomiruku.homework10.domain.Fish" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/item_background">
+
+        <TextView
+            android:id="@+id/species_name_text"
+            style="@style/label_list_species_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@{fish.speciesName}"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/species_name" />
+
+        <TextView
+            android:id="@+id/scientific_name_text"
+            style="@style/label_list_scientific_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="12dp"
+            android:text="@{fish.scientificName}"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/species_name_text"
+            tools:text="@string/scientific_name" />
+
+        <ImageView
+            android:id="@+id/location_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/location_icon_content_description"
+            android:src="@drawable/ic_location"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/scientific_name_text" />
+
+        <TextView
+            android:id="@+id/location_text"
+            style="@style/label_list_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:justificationMode="inter_word"
+            android:text="@{fish.location}"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/location_icon"
+            app:layout_constraintTop_toTopOf="@id/location_icon"
+            tools:text="@string/location" />
+
+        <ImageView
+            android:id="@+id/availability_time_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/availability_icon_content_description"
+            android:src="@drawable/ic_time"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/location_text" />
+
+        <TextView
+            android:id="@+id/availability_text"
+            style="@style/label_list_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:justificationMode="inter_word"
+            android:text="@{fish.availability}"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/availability_time_icon"
+            app:layout_constraintTop_toTopOf="@id/availability_time_icon"
+            tools:text="@string/availability" />
+
+        <ImageView
+            android:id="@+id/biology_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/biology_icon_content_description"
+            android:src="@drawable/ic_fish"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/availability_text" />
+
+        <TextView
+            android:id="@+id/biology_text"
+            style="@style/label_list_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/biology_icon"
+            app:layout_constraintTop_toTopOf="@id/biology_icon"
+            tools:text="@string/biology" />
+
+        <ImageView
+            android:id="@+id/health_benefits_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/health_benefits_icon_content_description"
+            android:src="@drawable/ic_food"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/biology_text" />
+
+        <TextView
+            android:id="@+id/health_benefits_text"
+            style="@style/label_list_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:justificationMode="inter_word"
+            android:text="@{fish.healthBenefits}"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/health_benefits_icon"
+            app:layout_constraintTop_toTopOf="@id/health_benefits_icon"
+            tools:text="@string/health_benefits" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/fish_image"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/fish_image_content_description"
+            android:scaleType="centerInside"
+            app:imageUrl="@{fish.illustrationSrc}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/health_benefits_text"
+            app:shapeAppearanceOverlay="@style/rounded_corners_img_view"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="26dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="26dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
