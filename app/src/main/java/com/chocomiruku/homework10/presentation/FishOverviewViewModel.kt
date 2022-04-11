@@ -25,7 +25,6 @@ class FishOverviewViewModel(
     val fish: LiveData<List<Fish>?>
         get() = _fish
 
-
     init {
         getFish()
     }
@@ -46,7 +45,6 @@ class FishOverviewViewModel(
     fun updateFavourites(fish: Fish) {
         updateFavouritesUseCase.execute(fish)
     }
-
 
     fun checkIsAddedToFavourites(fish: Fish): Boolean {
         return checkIsAddedToFavouritesUseCase.execute(fish)

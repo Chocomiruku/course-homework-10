@@ -9,6 +9,9 @@
         <variable
             name="fish"
             type="com.chocomiruku.homework10.domain.Fish" />
+        <variable
+            name="viewModel"
+            type="com.chocomiruku.homework10.presentation.FishOverviewViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -156,6 +159,7 @@
             android:id="@+id/update_favourites_btn"
             style="@style/Widget.App.Button.IconOnly"
             android:layout_width="wrap_content"
+            app:favouritesStatus="@{viewModel.checkIsAddedToFavourites(fish)}"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"

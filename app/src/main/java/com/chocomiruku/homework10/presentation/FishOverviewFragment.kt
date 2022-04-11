@@ -30,10 +30,10 @@ class FishOverviewFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        binding.factsList.adapter = FishAdapter(FishAdapter.OnClickListener {
-            viewModel.updateFavourites(it)
+        binding.factsList.adapter = FishAdapter(FishAdapter.OnClickListener { fish, position ->
+            viewModel.updateFavourites(fish)
+            binding.factsList.adapter?.notifyItemChanged(position, PAYLOAD_FAV_BUTTON)
         }, viewModel)
-
 
         return binding.root
     }
