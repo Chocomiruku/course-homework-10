@@ -1,4 +1,4 @@
-package com.chocomiruku.homework10.network
+package com.chocomiruku.homework10.model.network
 
 import com.chocomiruku.homework10.cropFacts
 import com.chocomiruku.homework10.domain.Fish

@@ -1,16 +1,18 @@
 package com.chocomiruku.homework10
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.chocomiruku.homework10.domain.Fish
-import com.chocomiruku.homework10.overview.ApiStatus
-import com.chocomiruku.homework10.overview.FishAdapter
+import com.chocomiruku.homework10.presentation.ApiStatus
+import com.chocomiruku.homework10.presentation.FishAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 @BindingAdapter("listData")
@@ -86,5 +88,24 @@ fun bindIllustration(imgView: ImageView, imgUrl: String?) {
             .into(imgView)
     } ?: run {
         imgView.visibility = View.INVISIBLE
+    }
+}
+
+@BindingAdapter("favouritesStatus")
+fun bindFavouritesButton(button: Button, isAdded: Boolean) {
+    if (!isAdded) {
+        button.setCompoundDrawablesWithIntrinsicBounds(
+            AppCompatResources.getDrawable(
+                button.context,
+                R.drawable.ic_baseline_favorite_border
+            ), null, null, null
+        )
+    } else {
+        button.setCompoundDrawablesWithIntrinsicBounds(
+            AppCompatResources.getDrawable(
+                button.context,
+                R.drawable.ic_baseline_favorite_filled
+            ), null, null, null
+        )
     }
 }

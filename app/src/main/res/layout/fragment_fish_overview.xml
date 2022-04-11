@@ -3,13 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.chocomiruku.homework10.overview.FishOverviewFragment">
+    tools:context="com.chocomiruku.homework10.presentation.FishOverviewFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.chocomiruku.homework10.overview.FishOverviewViewModel" />
+            type="com.chocomiruku.homework10.presentation.FishOverviewViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.chocomiruku.homework10.overview
+package com.chocomiruku.homework10.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,10 @@ class FishOverviewFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: FishOverviewViewModel by lazy {
-        ViewModelProvider(this).get(
+        ViewModelProvider(
+            this,
+            FishOverviewViewModelFactory(requireContext())
+        ).get(
             FishOverviewViewModel::class.java
         )
     }
@@ -27,7 +30,10 @@ class FishOverviewFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        binding.factsList.adapter = FishAdapter()
+        binding.factsList.adapter = FishAdapter(FishAdapter.OnClickListener { fish, position ->
+            viewModel.updateFavourites(fish)
+            binding.factsList.adapter?.notifyItemChanged(position, PAYLOAD_FAV_BUTTON)
+        }, viewModel)
 
         return binding.root
     }

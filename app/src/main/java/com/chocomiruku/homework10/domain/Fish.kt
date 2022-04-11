@@ -7,5 +7,5 @@ data class Fish(
     val location: String,
     val availability: String,
     val healthBenefits: String,
-    val illustrationSrc: String?,
+    val illustrationSrc: String?
 )
